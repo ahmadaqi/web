@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Madzz — Logo Animation & Design</title>
+  <meta name="description" content="Portofolio Madzz: jasa animasi logo & desain. Modern, cepat, profesional." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'Compressa VF'] },
+          colors: {
+            primary: {
+              50: '#EFF6FF', 100: '#DBEAFE', 200: '#BFDBFE', 300: '#93C5FD', 400: '#60A5FA',
+              500: '#3B82F6', 600: '#2563EB', 700: '#1D4ED8', 800: '#1E40AF', 900: '#1E3A8A'
+            },
+            accent: '#38BDF8'
+          },
+          boxShadow: {
+            glow: '0 10px 30px rgba(59,130,246,.35)',
+            soft: '0 6px 30px rgba(2, 6, 23, .25)'
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            blob: 'blob 16s ease-in-out infinite',
+            shine: 'shine 2.2s linear infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(20px, -30px) scale(1.05)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.98)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' }
+            },
+            shine: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Glass morph helpers */
+    .glass { backdrop-filter: blur(12px); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); }
+    .card { backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(30,58,138,.35), rgba(2,6,23,.55)); border: 1px solid rgba(148,163,184,.25); }
+    .btn-shine { background: linear-gradient(90deg, rgba(255,255,255,.2), rgba(56,189,248,.45), rgba(255,255,255,.2)); background-size: 200% 100%; }
+    
+    /* animate shadow gradient */
+    @keyframes shadow-gradient {
+      0%, 100% { box-shadow: 0 0 20px 4px #3B82F6; }
+      50% { box-shadow: 0 0 35px 10px #2563EB; }
+    }
+
+    .hover\\:animate-shadow-gradient:hover {
+      animation: shadow-gradient 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 selection:bg-primary-500 selection:text-white">
+  <!-- Background decoration -->
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-20 -left-20 h-96 w-96 rounded-full bg-primary-700/40 blur-3xl animate-blob"></div>
+    <div class="absolute top-1/3 -right-16 h-[28rem] w-[28rem] rounded-full bg-accent/30 blur-3xl animate-blob" style="animation-delay: -4s"></div>
+    <div class="absolute bottom-0 left-1/4 h-[26rem] w-[26rem] rounded-full bg-primary-500/20 blur-3xl animate-blob" style="animation-delay: -8s"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,.25),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(56,189,248,.2),transparent_30%),linear-gradient(180deg,rgba(2,6,23,.6),rgba(2,6,23,.95))]"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-5 z-40">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mt-4 mb-3 glass rounded-2xl px-4 py-3 shadow-soft">
+        <div class="flex items-center justify-between">
+          <a href="#home" class="group inline-flex items-center gap-2 hover:translate-x-2 transition duration-500 transform ease-in-out">
+            <img src="1000345451.png" alt="Madzz Logo" class="h-10 w-10 hover:scale-125 transition duration-500 transform ease-in-out">
+            <div>
+              <p class="text-lg font-extrabold tracking-tight">Madzz</p>
+              <p class="text-[10px] -mt-1 text-slate-300/80">Logo Animation Studio</p>
+            </div>
+          </a>
+          <div class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#services" class="hover:text-primary-300 hover:translate-y-2 transition duration-500 transition ease-in-out">Layanan</a>
+            <a href="#works" class="hover:text-primary-300 hover:translate-y-2 transition duration-500 transition ease-in-out">Karya</a>
+            <a href="#pricing" class="hover:text-primary-300 hover:translate-y-2 transition duration-500 transition ease-in-out">Harga</a>
+            <a href="#testi" class="hover:text-primary-300 hover:translate-y-2 transition duration-500 transition ease-in-out">Testimoni</a>
+            <a href="#contact" class="hover:text-primary-300 hover:translate-y-2 transition duration-500 transition ease-in-out">Kontak</a>
+            <a href="#cta" class="ml-2 rounded-xl bg-primary-600 px-4 py-2 font-semibold shadow-glow hover:translate-y-2 hover:scale-105 hover:bg-primary-500 hover:skew-x[-2deg] hover:skew-y-2 transition duration-500 transition ease-in-out">Pesan Sekarang</a>
+          </div>
+          <button class="md:hidden rounded-xl bg-white/5 px-3 py-2">Menu</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-20">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs text-slate-300 ring-1 ring-white/10 mb-4">
+            <span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
+            Booking terbuka • Revisi hingga 4x
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+            Bikin <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-accent">Logo Animasi</span> yang
+            <span class="whitespace-nowrap">bikin WOW!</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-300/90 max-w-xl">
+            Studio kreatif Madzz menghadirkan animasi logo bergaya <b>GFX modern</b> dengan sentuhan <b>anime elegan</b>. Cepat, rapi, dan siap tampil di website, media sosial, hingga opening video.
+          </p>
+          <div class="mt-7 flex flex-wrap items-center gap-4">
+            <a id="cta" href="#pricing" class="rounded-xl bg-primary-600 px-5 py-3 font-semibold shadow-glow hover:translate-y-2 hover:scale-105 hover:bg-primary-500 hover:skew-x[-2deg] hover:skew-y-2 transition duration-500 transition ease-in-out btn-shine bg-[length:200%_100%] animate-shine">Lihat Paket Harga</a>
+            <a href="#works" class="rounded-xl border border-white/20 px-5 py-3 font-semibold hover:border-primary-400/50 hover:bg-white/5">Lihat Portofolio</a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-xs text-slate-400">
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-primary-400"></span> 3–5 hari kerja</div>
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-primary-400"></span> File final .MP4 & .PNG</div>
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-primary-400"></span> Konsultasi gratis</div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-6 bg-gradient-to-tr from-primary-600/20 to-accent/20 blur-2xl rounded-3xl"></div>
+          <div class="relative aspect-[4/3] w-full rounded-3xl card shadow-soft p-4">
+            <div class="h-full w-full rounded-2xl bg-slate-900/40 grid place-items-center">
+              <div class="relative">
+                <div class="absolute -top-10 -left-14 h-24 w-24 rounded-full bg-primary-400/30 blur-xl animate-float"></div>
+                <div class="absolute -bottom-10 -right-14 h-28 w-28 rounded-full bg-accent/30 blur-xl animate-float" style="animation-delay: -2s"></div>
+                <div class="mx-auto h-28 w-28 rounded-2xl bg-gradient-to-br from-primary-300 to-accent shadow-glow grid place-items-center">
+                  <span class="text-4xl font-extrabold text-slate-900">M</span>
+                </div>
+                <p class="mt-5 text-center text-sm text-slate-300/80 max-w-sm">Maskot <b>MadzkoT</b> — biru muda, ramah, dan playful. Siap jadi identitas brand kamu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 flex items-end justify-between">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Layanan</h2>
+          <p class="text-slate-300/80 mt-2">Pilih sesuai kebutuhanmu — desain & animasi terpisah agar fleksibel.</p>
+        </div>
+        <a href="#contact" class="hidden md:inline-block text-sm text-primary-300 hover:scale-110 hover:translate-x-[-5px] hover:shadow-soft hover:text-primary-200 transition duration-500 transform ease-in-out">Butuh konsultasi? →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="rounded-2xl p-6 card hover:shadow-glow transition">
+          <div class="h-12 w-12 rounded-xl bg-primary-600/40 grid place-items-center mb-4">🔹</div>
+          <h3 class="text-xl font-bold">Desain Logo</h3>
+          <p class="text-slate-300/90 mt-2">Flat design, tegas, mudah diingat. Warna biru–putih sesuai identitas Madzz.</p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-300/80 list-disc list-inside">
+            <li>3 konsep awal</li>
+            <li>Revisi hingga 4x</li>
+            <li>File: SVG, PNG</li>
+          </ul>
+        </div>
+        <!-- Card 2 -->
+        <div class="rounded-2xl p-6 card hover:shadow-glow transition">
+          <div class="h-12 w-12 rounded-xl bg-primary-600/40 grid place-items-center mb-4">🎞️</div>
+          <h3 class="text-xl font-bold">Animasi Logo</h3>
+          <p class="text-slate-300/90 mt-2">Gaya GFX modern + anime elegan. Cocok untuk intro video & sosial media.</p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-300/80 list-disc list-inside">
+            <li>Durasi 3–8 detik</li>
+            <li>Sound design opsional</li>
+            <li>File: MP4, PNG sequence</li>
+          </ul>
+        </div>
+        <!-- Card 3 -->
+        <div class="rounded-2xl p-6 card hover:shadow-glow transition">
+          <div class="h-12 w-12 rounded-xl bg-primary-600/40 grid place-items-center mb-4">🧰</div>
+          <h3 class="text-xl font-bold">Bundle Pro</h3>
+          <p class="text-slate-300/90 mt-2">Desain logo + animasi + brand guidelines ringkas.</p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-300/80 list-disc list-inside">
+            <li>Semua file master</li>
+            <li>Prioritas antrian</li>
+            <li>Garansi minor edit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works / Portfolio -->
+  <section id="works" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Karya Terpilih</h2>
+        <p class="text-slate-300/80 mt-2">Contoh proyek logo animasi & banner motion.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Item -->
+        <figure class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+          <img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1200&auto=format&fit=crop" loading="lazy" alt="Project 1" class="aspect-video w-full object-cover transition duration-500 group-hover:scale-105" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-950/80 to-transparent text-sm">Logo Reveal — Tech</figcaption>
+        </figure>
+        <figure class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+          <img src="https://images.unsplash.com/photo-1526948531399-320e7e40f0ca?q=80&w=1200&auto=format&fit=crop" loading="lazy" alt="Project 2" class="aspect-video w-full object-cover transition duration-500 group-hover:scale-105" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-950/80 to-transparent text-sm">Brand Bumper — Gaming</figcaption>
+        </figure>
+        <figure class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+          <img src="https://images.unsplash.com/photo-1526948128571-cb063b45f9b1?q=80&w=1200&auto=format&fit=crop" loading="lazy" alt="Project 3" class="aspect-video w-full object-cover transition duration-500 group-hover:scale-105" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-950/80 to-transparent text-sm">Motion Banner — Esports</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Paket Harga</h2>
+        <p class="text-slate-300/80 mt-2">Harga menyesuaikan tingkat kesulitan. Pilih yang pas, upgrade kapan saja.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- Basic -->
+        <div class="rounded-2xl p-6 card hover:shadow-glow hover:scale-90 hover:skew-x-[-6deg] hover:rotate-6 hover:translate-y-1 transition duration-1000 transform ease-in-out">
+          <h3 class="text-xl font-bold">Basic</h3>
+          <p class="text-sm text-slate-300/80 mt-1">Untuk proyek sederhana.</p>
+          <p class="mt-4 text-3xl font-extrabold">Rp 150k</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+            <li>1 konsep animasi</li>
+            <li>Durasi ≤ 5 detik</li>
+            <li>Revisi 2x</li>
+            <li>File MP4 1080p</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block rounded-xl bg-white/10 px-4 py-2 font-semibold hover:bg-primary-500 hover:translate-y-2 transition duration-500 transform ease-in-out">Pilih Basic</a>
+        </div>
+        <!-- Standard -->
+        <div class="rounded-2xl p-6 card scale-105 ring-2 ring-primary-500/60 shadow-glow hover:shadow-glow hover:scale-90 hover:skew-x-[-6deg] hover:rotate-6 hover:translate-y-1 transition duration-1000 transform ease-in-out">
+          <div class="inline-flex items-center gap-2 rounded-full bg-primary-500/20 px-3 py-1 text-[10px] font-semibold">Paling Populer</div>
+          <h3 class="mt-2 text-xl font-bold">Standard</h3>
+          <p class="text-sm text-slate-300/80 mt-1">Seimbang untuk brand aktif.</p>
+          <p class="mt-4 text-3xl font-extrabold">Rp 300k</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+            <li>2 konsep animasi</li>
+            <li>Durasi 5–8 detik</li>
+            <li>Revisi sampai 4x</li>
+            <li>MP4 1080p + PNG Sequence</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block rounded-xl bg-primary-600 px-4 py-2 font-semibold shadow-glow hover:translate-y-2 transition duration-500 transform ease-in-out">Pilih Standard</a>
+        </div>
+        <!-- Premium -->
+        <div class="rounded-2xl p-6 card hover:shadow-glow hover:scale-90 hover:skew-x-[-6deg] hover:rotate-6 hover:translate-y-1 transition duration-1000 transform ease-in-out">
+          <h3 class="text-xl font-bold">Premium</h3>
+          <p class="text-sm text-slate-300/80 mt-1">Untuk kebutuhan profesional.</p>
+          <p class="mt-4 text-3xl font-extrabold">Custom</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+            <li>Storyboard & sound design</li>
+            <li>Export 4K</li>
+            <li>Prioritas antrian</li>
+            <li>Semua file master</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block rounded-xl bg-white/10 px-4 py-2 font-semibold hover:bg-primary-500 hover:translate-y-2 transition duration-500 transform ease-in-out">Diskusikan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testi" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Testimoni</h2>
+        <p class="text-slate-300/80 mt-2">Apa kata klien tentang Madzz.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <blockquote class="rounded-2xl p-6 glass shadow-soft">
+          <p class="text-slate-200">“Proses cepat, hasilnya bersih dan keren!”</p>
+          <footer class="mt-4 text-sm text-slate-400">— Raka, Content Creator</footer>
+        </blockquote>
+        <blockquote class="rounded-2xl p-6 glass shadow-soft">
+          <p class="text-slate-200">“Brief langsung nyambung. Animasi logo bikin brand kami naik kelas.”</p>
+          <footer class="mt-4 text-sm text-slate-400">— Dini, UMKM Fashion</footer>
+        </blockquote>
+        <blockquote class="rounded-2xl p-6 glass shadow-soft">
+          <p class="text-slate-200">“Recommended! Revisi cepat, komunikasinya enak.”</p>
+          <footer class="mt-4 text-sm text-slate-400">— Bima, Esports Team</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Hubungi Madzz</h2>
+          <p class="text-slate-300/80 mt-2">Siap kolaborasi? Kirim brief atau tanya-tanya dulu juga boleh.</p>
+          <ul class="mt-6 space-y-3 text-slate-300/90">
+            <li>📩 Email: <a class="underline decoration-primary-500/60 underline-offset-4 hover:text-primary-300" href="mailto:halo@madzzstudio.xyz">halo@madzzstudio.xyz</a></li>
+            <li>📱 WhatsApp: <a class="underline decoration-primary-500/60 underline-offset-4 hover:text-primary-300" href="#">+62-8xx-xxxx-xxxx</a></li>
+            <li>🎬 IG/TikTok: @madzz.studio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-sm text-slate-400">© <span id="year"></span> Madzz Studio. All rights reserved.</p>
+      <div class="flex items-center gap-3 text-sm">
+        <a href="#" class="hover:text-primary-300">Terms</a>
+        <span class="opacity-40">•</span>
+        <a href="#" class="hover:text-primary-300">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
